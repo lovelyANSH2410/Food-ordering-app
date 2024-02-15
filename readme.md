@@ -22,3 +22,25 @@ react playground ❤️
 - HTTPS
 - Tree shaking -> remove unused code
 - Different dev and production bundle
+
+# Food ordering app
+/* 
+header -> 
+- logo 
+- home 
+- about
+
+body -> 
+- search bar
+- restaurant container
+    - restaurant card
+        - image
+        - name, rating, cuisine, time
+
+footer -> 
+- copyright
+- links
+- disclaimer
+- address, contact
+
+*/

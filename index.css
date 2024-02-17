@@ -35,7 +35,7 @@
 
 .filter-btn {
     cursor: pointer;
-    margin: 10px;
+    margin-left: 10px;
 }
 
 .footer {
@@ -43,6 +43,7 @@
     border: .5px solid black;
     height: 150px;
     margin: 10px;
+    background-color: rgb(44, 34, 34);
 }
 
 
@@ -86,5 +87,20 @@
     
 }
 
+.login {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
 
+    background-color: rgb(245, 219, 185);
+}
 
+.nav-btn{
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    cursor: pointer;
+    margin: 10px;
+}

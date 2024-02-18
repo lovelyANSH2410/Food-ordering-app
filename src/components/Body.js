@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 //import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //local state variable - superpowerful variable
@@ -25,7 +26,7 @@ const Body = () => {
     );
     setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    )
+    );
   };
 
   return listOfRestaurants.length === 0 ? (
@@ -60,7 +61,7 @@ const Body = () => {
               (res) => res.info.avgRating > 4
             );
             setFilteredRestaurant(filteredList);
-          }} 
+          }}
         >
           Top Rated Restaurants
         </button>
@@ -68,7 +69,12 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRestaurant.map((restaurant, index) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

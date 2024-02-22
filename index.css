@@ -42,15 +42,26 @@
     border: .5px solid black;
     height: 150px;
     margin: 10px;
-    background-color: rgb(44, 34, 34);
+    background-color: rgb(245, 219, 185);
 }
 
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
+}
 
 
 .res-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.about {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
 }
 
 .res-card { 

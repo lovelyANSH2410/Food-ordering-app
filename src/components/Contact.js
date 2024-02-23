@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -21,50 +21,21 @@ const Contact = () => {
     console.log(formData);
     // Reset form after submission
     setFormData({
-      name: '',
-      email: '',
-      message: ''
+      name: "",
+      email: "",
+      message: "",
     });
   };
 
   return (
     <div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+      <div class="relative group">
+        <div class="w-64 h-40 bg-gray-200 rounded-lg overflow-hidden transition-transform duration-300 transform group-hover:scale-105"></div>
+
+        <div class="absolute top-0 left-0 bg-green-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg transform translate-x-2 -translate-y-2 transition-transform duration-300 group-hover:opacity-100">
+          Recommended
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      </div>
     </div>
   );
 };

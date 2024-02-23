@@ -14,9 +14,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const Footer = () => {
-  return <div className="footer">
+  return <div className="footer bg-pink-100 p-4 mt-4 rounded-3xl">
     <div className="container">
-        <div className="footer-content">
+        <div className="footer-content text-center">
           <p>&copy; 2024 Love foods. All rights reserved.</p>
           <p>Contact: info@lovefoods.com</p>
         </div>

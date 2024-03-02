@@ -23,7 +23,8 @@ const ItemList = ({ items }) => {
             </div>
           </div>
           <div className="w-2/12">
-            <button className="bg-white absolute shadow-md mx-12 px-4 py-1 rounded-lg text-green-600 text-md font-semibold">
+            <button className="bg-white absolute shadow-md mx-12 px-4 py-1 rounded-lg text-green-600 text-md font-semibold"
+            >
               Add
             </button>
             <img

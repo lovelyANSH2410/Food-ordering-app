@@ -2,11 +2,9 @@ import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 import ItemList from "./Itemlist";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowIndex();
   };
 
   return (

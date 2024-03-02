@@ -1,10 +1,11 @@
 import RestaurantCard, { withRecommendedLabel } from "./RestaurantCard";
 //import resList from "../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { list } from "postcss";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //local state variable - superpowerful variable
@@ -38,10 +39,12 @@ const Body = () => {
 
   if (onlineStatus === false)
     return (
-      <h1>
+      <h1 className="">
         Looks like you're offline!! Please check your internet connection.
       </h1>
     );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -51,7 +54,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box border border-solid border-black rounded-lg hover:scale-105"
+            className="search-box border border-black px-2 py-1 rounded-md"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -81,6 +84,15 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="search p-4 flex items-center">
+          <label>Set User Name : </label>
+          <input
+            type="text"
+            className="px-2 mx-1 py-1 border border-black rounded-md"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          ></input>
         </div>
       </div>
 

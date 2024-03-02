@@ -1,12 +1,19 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   //let btnName = "Login";
   const [btnName, setBtnName] = useState(["Login"]);
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);
+
+  //Subscribing to the store using a selector
+
+  const cartItems = useSelector((store) => store.cart.items);
 
   //if no dependency array = useEffect will be called on every render
   //if dependency array is empty = [] = useEffect is called on only initial render(just once)
@@ -35,7 +42,7 @@ const Header = () => {
           <li className="px-4 hover:scale-105">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4 hover:scale-105">Cart 🛒</li>
+          <li className="px-4 hover:scale-105">Cart 🛒{cartItems.length}</li>
           <button
             className="login px-4 hover:scale-105"
             onClick={() => {
@@ -44,6 +51,7 @@ const Header = () => {
           >
             {btnName}
           </button>
+          <li className="px-4 hover:scale-105">{loggedInUser}</li>
         </ul>
       </div>
     </div>

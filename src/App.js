@@ -11,6 +11,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import appStore from "./utils/appStore";
 import UserContext from "./utils/UserContext";
+import Cart from "./components/Cart";
 
 //Chunking / Code splitting / Dynamic bundling / lazy loading / on demand loading
 
@@ -36,7 +37,7 @@ const AppLayout = () => {
   useEffect(() => {
     //make an api call and send username and password
     const data = {
-      name: "Shubham Kushwaha",
+      name: "",
     };
     setUserName(data.name);
   }, []);
@@ -70,6 +71,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/grocery",

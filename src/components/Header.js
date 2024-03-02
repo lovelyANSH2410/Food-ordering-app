@@ -9,7 +9,7 @@ const Header = () => {
   //let btnName = "Login";
   const [btnName, setBtnName] = useState(["Login"]);
   const onlineStatus = useOnlineStatus();
-  const {loggedInUser} = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
 
   //Subscribing to the store using a selector
 
@@ -42,7 +42,9 @@ const Header = () => {
           <li className="px-4 hover:scale-105">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4 hover:scale-105">Cart 🛒{cartItems.length}</li>
+          <li className="px-4 hover:scale-105">
+            <Link to="/cart">Cart 🛒{cartItems.length}</Link>
+          </li>
           <button
             className="login px-4 hover:scale-105"
             onClick={() => {

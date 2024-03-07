@@ -53,3 +53,14 @@
     - dispatch (action)
     - Selector
 
+# Types of Testing 
+    - Unit testing
+    - Integration testing
+    - End to End testing e2e
+
+# Setting up testing in our app
+    - Install react testing library
+    - Intsall jest
+    - Installed babel dependencies
+    - Configure babel
+    - Configure parcel config file to disable default babel transpilation

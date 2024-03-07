@@ -1,10 +1,8 @@
 import RestaurantCard, { withRecommendedLabel } from "./RestaurantCard";
-//import resList from "../utils/mockData";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { list } from "postcss";
 import UserContext from "../utils/UserContext";
 
 const Body = () => {
@@ -27,10 +25,10 @@ const Body = () => {
 
     const json = await data.json();
     setListOfRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1 || 2 || 3 || 4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1 || 2 || 3 || 4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

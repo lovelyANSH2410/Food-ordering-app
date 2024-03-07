@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { CDN_URL } from "../utils/constants";
+
 import ItemList from "./Itemlist";
 
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {

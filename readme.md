@@ -64,3 +64,4 @@
     - Installed babel dependencies
     - Configure babel
     - Configure parcel config file to disable default babel transpilation
+    - configure jest -> npx jest --init
